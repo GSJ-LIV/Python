@@ -3,10 +3,10 @@ from collections import deque
 
 DIRECTIONS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
-def sys_input() -> str:
+def sys_input():
     return sys.stdin.readline().rstrip()
 
-def bfs(n: int, m: int, board: list[list[int]], visited: list[list[bool]], start: tuple[int, int]) -> int:
+def bfs(n, m, board, visited, start):
 
     size = 1
     queue = deque([start])
@@ -22,7 +22,7 @@ def bfs(n: int, m: int, board: list[list[int]], visited: list[list[bool]], start
                 size += 1
     return size
         
-def solve(n: int, m: int, board: list[list[int]]) -> tuple[int, int]:
+def solve(n, m, board):
     paints_size = [] 
     visited = [[False] * m for _ in range(n)]
 
@@ -37,7 +37,7 @@ def main() -> None:
     n, m = map(int, sys_input().split())
     board = [list(map(int, sys_input().split())) for _ in range(n)]
 
-    answer: tuple[int, int] = solve(n, m, board)
+    answer = solve(n, m, board)
     print(answer[0])
     print(answer[1])
 
