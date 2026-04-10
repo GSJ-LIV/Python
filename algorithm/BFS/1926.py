@@ -33,7 +33,7 @@ def solve(n, m, board):
                 paints_size.append(size)
     return len(paints_size), max(paints_size) if paints_size else 0
 
-def main() -> None:
+def main():
     n, m = map(int, sys_input().split())
     board = [list(map(int, sys_input().split())) for _ in range(n)]
 
