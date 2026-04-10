@@ -6,8 +6,7 @@ DIRECTIONS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 def sys_input() -> str:
     return sys.stdin.readline().rstrip()
 
-def bfs(n: int, m: int, board: list[list[int]], 
-        visited: list[list[bool]], start: tuple[int, int]) -> int
+def bfs(n: int, m: int, board: list[list[int]], visited: list[list[bool]], start: tuple[int, int]) -> int:
 
     size = 1
     queue = deque([start])
@@ -21,9 +20,8 @@ def bfs(n: int, m: int, board: list[list[int]],
                 visited[nx][ny] = True
                 queue.append((nx, ny))
                 size += 1
-            return size
+    return size
         
-    
 def solve(n: int, m: int, board: list[list[int]]) -> tuple[int, int]:
     paints_size = [] 
     visited = [[False] * m for _ in range(n)]
